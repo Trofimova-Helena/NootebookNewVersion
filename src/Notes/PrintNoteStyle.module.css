@@ -1,0 +1,39 @@
+.forBackground {
+    background-image: url(https://thumbs.dreamstime.com/z/%D0%BB%D0%B8%D1%81%D1%82-%D0%B1%D0%BB%D0%BE%D0%BA%D0%BD%D0%BE%D1%82%D0%B0-24001458.jpg); 
+    background-size: 50%;
+    height: 1000px;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.enteringText {
+    display: flex;
+    align-items: center;
+}
+
+.titels {
+    display: flex;
+    justify-content: space-around;
+}
+
+.search {
+    padding-top: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.li {
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    margin-left: 10px;
+}
