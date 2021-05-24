@@ -11,14 +11,13 @@ const SEARCH = "SEARCH"
 let initialState = {
     Notes: [
         { id: uuid(), note: 'запись_1' },
-        { id: uuid(), note: 'какая-то запись_2' },
-        { id: uuid(), note: 'Запись_3' },
-        { id: uuid(), note: 'КАКАЯ-ТО запись_4' },
+        { id: uuid(), note: 'запись_2' },
     ],
     NewNotes: '',
     ChangingNote: '',
     SearchNotes: [],
 }
+
 
 export const AddNote = () => {
     return { type: ADD_NOTE };

@@ -12,7 +12,7 @@ let mapStateToProps = (state) => {
        notes: state.AllNotes.Notes,
        newNotes: state.AllNotes.NewNotes, 
        changingNote: state.AllNotes.ChangingNote,  
-       changingNoteObj: state.AllNotes.ChangingNoteObj,
+       //changingNoteObj: state.AllNotes.ChangingNoteObj,
        searchNotes: state.AllNotes.SearchNotes,
     } 
 }

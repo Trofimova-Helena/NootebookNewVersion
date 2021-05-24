@@ -12,16 +12,23 @@
 
 .enteringText {
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
+    width: 99%;
+    margin-bottom: 20px;
+}
+
+.forTextareaDiv {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .titels {
-    display: flex;
-    justify-content: space-around;
+    border: solid 1px skyblue;
 }
 
 .search {
     padding-top: 20px;
+    margin-bottom: 20px;
     width: 90%;
     display: flex;
     justify-content: flex-end;
@@ -32,8 +39,33 @@
     font-size: 20px;
     display: flex;
     align-items: center;
+    border: solid 1px transparent;
+    margin-bottom: 10px;
 }
 
 .btn {
-    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    border-color: skyblue;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.basket {
+    width: 20px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.SearchPic {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.addBtn {
+    border-radius: 5px;
+    padding: 5px;
+    border-color: transparent;
+    width: 80px;
 }

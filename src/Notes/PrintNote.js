@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Search from './Search';
 import styles from './PrintNoteStyle.module.css';
 import imgUrl from './../ProjectImages/page.jpg';
+import Basket from './../ProjectImages/basket.jpg';
 
 function PrintNote(props) {
     let [edit, setEdit] = useState(false);
@@ -31,10 +32,14 @@ function PrintNote(props) {
 
     let lis = list.map((el, index) => {
         return <li key={el.id} className={styles.li}>
+            <span>
+                <button className={styles.btn}>
+                    <img src={Basket} className={styles.basket} onClick={props.DelNote} id={el.id} data-index={index} />
+                </button>
+            </span>
             <span onClick={activateEditMode} onMouseOver={onMouseOverAction} id={el.id}>
                 {el.note}
             </span>
-            <span><button onClick={props.DelNote} id={el.id} data-index={index} className={styles.btn}>Удалить</button></span>
         </li>
     })
 
@@ -42,10 +47,14 @@ function PrintNote(props) {
         for(let i=0; i<props.searchNotes.length; i++) {
             if (props.searchNotes[i] === ind) {
                 return <li key={el.id} className={styles.li}>
+                <span>
+                    <button className={styles.btn}>
+                        <img src={Basket} className={styles.basket} onClick={props.DelNote} id={el.id} data-index={ind} />
+                    </button>
+                </span>
                 <span onClick={activateEditMode} onMouseOver={onMouseOverAction} id={el.id}>
                     {el.note}
                 </span>
-                <span><button onClick={props.DelNote} id={el.id} data-index={ind} className={styles.btn}>Удалить</button></span>
             </li> 
             }
         }
@@ -63,27 +72,27 @@ function PrintNote(props) {
         <div className={styles.container}>{props.searchNotes.length <= 0 ? 
             <div>
                 {!edit ?
-                    <div className={styles.titels}>
-                        <div>
-                            <ul>{lis}</ul>
-                        </div>
+                    <div>
                         <div className={styles.enteringText}>
                             <textarea onChange={props.ChangeValue} value={props.newNotes} />
                             <div>
-                                <button onClick={props.AddNote}>Добавить</button>
+                                <button onClick={props.AddNote} className={styles.addBtn}>Добавить</button>
                             </div>
                         </div>
-                    </div>
-                    :
-                    <div className={styles.titels}>
                         <div>
                             <ul>{lis}</ul>
                         </div>
+                    </div>
+                    :
+                    <div>
                         <div className={styles.enteringText}>
                             <textarea value={props.changingNote.note} onChange={props.ChangeTextArrValForEdit} id={props.changingNote.id} />
                             <div>
-                                <button onClick={SaveChanging}>Изменить</button>
+                                <button onClick={SaveChanging} className={styles.addBtn}>Изменить</button>
                             </div>
+                        </div>
+                        <div>
+                            <ul>{lis}</ul>
                         </div>
                     </div>
                 }
@@ -93,27 +102,27 @@ function PrintNote(props) {
 
             <div>
                 {!edit ?
-                    <div className={styles.titels}>
-                        <div>
-                            <ul>{searchLis}</ul>
-                        </div>
+                    <div>
                         <div className={styles.enteringText}>
                             <textarea onChange={props.ChangeValue} value={props.newNotes} />
                             <div>
                                 <button onClick={props.AddNote}>Добавить</button>
                             </div>
                         </div>
-                    </div>
-                    :
-                    <div className={styles.titels}>
-                        <div>
+                        <div className={styles.titels}>
                             <ul>{searchLis}</ul>
                         </div>
+                    </div>
+                    :
+                    <div>
                         <div className={styles.enteringText}>
                             <textarea value={props.changingNote.note} onChange={props.ChangeTextArrValForEdit} id={props.changingNote.id} />
                             <div>
                                 <button onClick={SaveChanging}>Изменить</button>
                             </div>
+                        </div>
+                        <div className={styles.titels}>
+                            <ul>{searchLis}</ul>
                         </div>
                     </div>
                 }
